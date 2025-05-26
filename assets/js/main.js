@@ -1,5 +1,5 @@
 const statut = {
-    allMessages: []
+    Messages: []
 };
 
 Vue.component('user1', {
@@ -7,32 +7,35 @@ Vue.component('user1', {
         return {
             nom: "Caroline",
             msg: '',
-            data: statut
+            disc : 'en ligne',
+            data: statut,
         };
     },
     template: `
         <div>
-            <div class="chat-header">
+            <div class="header">
                 <img src="assets/images/image1.jpeg">
                 <span> {{ nom }} </span>
+                <hr>
+                   <p class="status">{{ disc }}<p>
             </div>
             <div style="min-height: 500px;">
-                <div v-for="(message, index) in data.allMessages" :key="index" :class="message.sender === nom ? 'outcoming' : 'incoming'">
+                <div v-for="(message, index) in data.Messages" :key="index" :class="message.expediteur === nom ? 'outcoming' : 'incoming'">
                     <img v-if="message.sender !== nom" src="assets/images/image1.jpeg">
                     <span>{{ message.text }}</span>
                 </div>
             </div>
-            <form class="input-container" @submit.prevent="envoyerMessage">
+            <form class="input" @submit.prevent="envoyer">
                 <input type="text" placeholder="Écrivez un message..." v-model="msg">
                 <button type="submit">Envoyer</button>
             </form>
         </div>
     `,
     methods: {
-        envoyerMessage() {
+        envoyer() {
             if (this.msg !== '') {
-                this.data.allMessages.push({
-                    sender: this.nom,
+                this.data.Messages.push({
+                    expediteur: this.nom,
                     text: this.msg
                 });
                 this.msg = ''
@@ -47,32 +50,35 @@ Vue.component('user2', {
             nom: "Max",
             img: "assets/images/image2.jpeg",
             msg: '',
+            disc : 'en ligne',
             data: statut
         };
     },
     template: `
         <div>
-            <div class="chat-header">
+            <div class="header">
                 <img :src="img">
                 <span> {{ nom }} </span>
+                 <hr>
+                   <p class="status">{{ disc }}<p>
             </div>
             <div style="min-height: 500px;">
-                <div v-for="(message, index) in data.allMessages" :key="index" :class="message.sender === nom ? 'outcoming' : 'incoming'">
+                <div v-for="(message, index) in data.Messages" :key="index" :class="message.expediteur === nom ? 'outcoming' : 'incoming'">
                     <img v-if="message.sender !== nom" src="assets/images/image2.jpeg">
                     <span>{{ message.text }}</span>
                 </div>
             </div>
-            <form class="input-container" @submit.prevent="envoyerMessage">
+            <form class="input" @submit.prevent="envoyer">
                 <input type="text" placeholder="Écrivez un message..." v-model="msg">
                 <button type="submit">Envoyer</button>
             </form>
         </div>
     `,
     methods: {
-        envoyerMessage() {
+        envoyer() {
             if (this.msg !== '') {
-                this.data.allMessages.push({
-                    sender: this.nom,
+                this.data.Messages.push({
+                    expediteur: this.nom,
                     text: this.msg
                 });
                 this.msg = '';
