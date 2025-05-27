@@ -26,7 +26,7 @@ Vue.component('user1', {
                 </div>
             </div>
             <form class="input" @submit.prevent="envoyer">
-                <input type="text" placeholder="Écrivez un message..." v-model="msg">
+                <textarea placeholder="Écrivez un message..." v-model="msg"></textarea>
                 <button type="submit">Envoyer</button>
             </form>
         </div>
@@ -69,7 +69,7 @@ Vue.component('user2', {
                 </div>
             </div>
             <form class="input" @submit.prevent="envoyer">
-                <input type="text" placeholder="Écrivez un message..." v-model="msg">
+                <textarea placeholder="Écrivez un message..." v-model="msg"></textarea>
                 <button type="submit">Envoyer</button>
             </form>
         </div>
