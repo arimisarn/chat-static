@@ -58,29 +58,29 @@ button {
 button:hover {
     background:  rgb(95, 176, 230);
 }
-.incoming {
+.entrant {
     display: flex;
     align-items: center;
     gap: 10px;
     padding-bottom: 10px;
     margin-top: 10px;
 }
-.incoming span {
+.entrant span {
     background-color: #6366f1;
     color: white;
     padding: 10px;
     border-radius: 8px;
 }
-.outcoming {
+.sortant {
     display: flex;
     justify-content: flex-end;
     margin-top: 10px;
     padding-bottom: 10px;
 }
-.outcoming img{
+.sortant img{
     margin-right: 10px;
 }
-.outcoming span {
+.sortant span {
     padding: 10px;
     border-radius: 8px;
     background-color: #adaaaa;

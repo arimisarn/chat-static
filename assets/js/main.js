@@ -20,7 +20,7 @@ Vue.component('user1', {
                    <p class="status">{{ disc }}<p>
             </div>
             <div style="min-height: 500px;">
-                <div v-for="(message, index) in data.Messages" :key="index" :class="message.expediteur === nom ? 'outcoming' : 'incoming'">
+                <div v-for="(message, index) in data.Messages" :key="index" :class="message.expediteur === nom ? 'sortant' : 'entrant'">
                     <img v-if="message.sender !== nom" src="assets/images/image1.jpeg">
                     <span>{{ message.text }}</span>
                 </div>
@@ -63,7 +63,7 @@ Vue.component('user2', {
                    <p class="status">{{ disc }}<p>
             </div>
             <div style="min-height: 500px;">
-                <div v-for="(message, index) in data.Messages" :key="index" :class="message.expediteur === nom ? 'outcoming' : 'incoming'">
+                <div v-for="(message, index) in data.Messages" :key="index" :class="message.expediteur === nom ? 'sortant' : 'entrant'">
                     <img v-if="message.sender !== nom" src="assets/images/image2.jpeg">
                     <span>{{ message.text }}</span>
                 </div>
